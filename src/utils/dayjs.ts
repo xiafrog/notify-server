@@ -16,7 +16,6 @@ const WEEKS: { [key: number]: string } = {
 }
 
 export const weekToday = () => {
-  console.log(dayjs().format('[YYYYescape] YYYY-MM-DDTHH:mm:ssZ[Z]'))
   const week = dayjs().get('days')
   return WEEKS[week]
 }
