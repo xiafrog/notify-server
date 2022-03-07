@@ -11,6 +11,7 @@
 
 import dayjs from '../../../utils/dayjs'
 import { getConfig } from '../../../utils/getConfig'
+import moment from "moment";
 
 const CONFIG = getConfig().loveMsg
 
@@ -33,7 +34,7 @@ export const textCardTemplate = (data: TextCardTemplateProps) => {
 
   // 今日、恋爱天数
   const today = `${date.replace('-', '年').replace('-', '月')}日`
-  const dateLength = dayjs(date).diff(CONFIG.start_stamp, 'day') + 1
+  const dateLength = moment(date).diff(CONFIG.start_stamp, 'day') + 1
 
   // 拼接内容
   let description = `${area} | ${today} | ${week}`

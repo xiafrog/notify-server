@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import duration from 'dayjs/plugin/duration'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
+import moment from "moment";
 
 dayjs.extend(duration)
 dayjs.extend(LocalizedFormat)
@@ -16,7 +17,7 @@ const WEEKS: { [key: number]: string } = {
 }
 
 export const weekToday = () => {
-  const week = dayjs().get('days')
+  const week = moment().utcOffset(8).day()
   return WEEKS[week]
 }
 
