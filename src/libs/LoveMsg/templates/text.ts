@@ -12,7 +12,7 @@ const CONFIG = getConfig().loveMsg
 export const textTemplate = (data: TextTemplateProps) => {
   const { caiHongpi, sayLove, songLyrics, oneMagazines, netEaseCloud, oneWord, dayEnglish } = data
 
-  let text = `早安呀，我可爱的${CONFIG.girl_name}~\n ${moment().format('YYYY-MM-DDTHH:mm:ssZ[Z]')} \n`
+  let text = `早安呀，我可爱的${CONFIG.girl_name}~\n ${moment().utcOffset(8).format('YYYY-MM-DDTHH:mm:ssZ[Z]')} \n`
 
   // 工作日/休息日，需要排除节假日
   const week = weekToday()
